@@ -1,0 +1,114 @@
+:root {
+    --bg-color: #f4f4f9;
+    --text-color: #333;
+    --border-color: #ccc;
+    --header-bg: #fff;
+    --btn-bg: #28a745;
+    --btn-hover: #218838;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    background-color: var(--header-bg);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+header h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.btn {
+    background-color: var(--btn-bg);
+    color: white;
+    border: none;
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.btn:hover {
+    background-color: var(--btn-hover);
+}
+
+.container {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+.editor-pane {
+    width: 350px;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border-right: 1px solid var(--border-color);
+    background-color: #fff;
+}
+
+textarea {
+    flex: 1;
+    width: 100%;
+    resize: none;
+    padding: 1rem;
+    font-family: 'Fira Code', Consolas, Monaco, 'Courier New', Courier, monospace;
+    font-size: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    outline: none;
+    white-space: pre;
+}
+
+textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0,123,255,0.25);
+}
+
+.preview-pane {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    background-color: #fff;
+}
+
+#drawio-iframe {
+    border: none;
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .editor-pane {
+        width: 100%;
+        height: 40vh;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+    }
+}
